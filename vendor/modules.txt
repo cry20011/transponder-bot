@@ -1,0 +1,9 @@
+# github.com/caarlos0/env/v9 v9.0.0
+## explicit; go 1.17
+github.com/caarlos0/env/v9
+# github.com/go-telegram-bot-api/telegram-bot-api v4.6.4+incompatible
+## explicit
+github.com/go-telegram-bot-api/telegram-bot-api
+# github.com/technoweenie/multipartstreamer v1.0.1
+## explicit
+github.com/technoweenie/multipartstreamer
