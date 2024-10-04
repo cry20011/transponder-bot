@@ -36,7 +36,7 @@ func (c *BotCommands) Run(ctx context.Context) error {
 	c.addCommand("/start", func(ctx context.Context, update tgbotapi.Update) {
 		err := c.users.AddUser(ctx, update.Message.From.UserName)
 		if err != nil {
-			return
+			log.Printf("add user error: %v", err)
 		}
 
 		msg := "Welcome to transponder bot."
