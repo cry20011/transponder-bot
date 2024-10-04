@@ -1,7 +1,9 @@
 package usecase
 
+import "context"
+
 type (
 	UsersRepo interface {
-		AddUser(username string) error
+		AddUser(ctx context.Context, username string) error
 	}
 )

@@ -1,20 +1,23 @@
 package repo
 
-import "transponder-bot/pkg/postgres"
+import (
+	"context"
+	"transponder-bot/pkg/postgres"
+)
 
 type Users struct {
 	postgres *postgres.Postgres
 }
 
-func New(p *postgres.Postgres) Users {
-	return Users{
+func NewUsers(p *postgres.Postgres) *Users {
+	return &Users{
 		postgres: p,
 	}
 }
 
-func (u *Users) AddUser(username string) error {
+func (u *Users) AddUser(ctx context.Context, username string) error {
 	insertUserStmt := `insert into "users"("name") values($1)`
 
-	_, err := u.postgres.Exec(insertUserStmt, username)
+	_, err := u.postgres.ExecContext(ctx, insertUserStmt, username)
 	return err
 }
