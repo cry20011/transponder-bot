@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  bot:
+    container_name: transponder_bot
+    build:
+      dockerfile: docker/bot.Dockerfile
+
+  postgres:
+    container_name: transponder_bot_postgres
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "transponder_bot_db"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+    ports:
+      - "5432:5432"
